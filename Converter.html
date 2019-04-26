@@ -10,26 +10,26 @@
         body {
             background-image: url("background.jpg");
             background-size: cover;
+            padding: 30px;
             text-align: center;
-            padding: 450px;
+            height: 100%;
         }
         
-        #maintable {
-            width: 100%;
-            text-align: center;
+        .flex-container {
+            display: flex;
+            height: auto;
+            flex-direction: row;
+        }
+        
+        .flex-container>div {
+            background-color: rgb(26, 26, 26, .4);
+            margin: 10px;
             padding: 20px;
-            color: white;
-        }
-        
-        table,
-        th,
-        tr,
-        td {
-            border: 1px solid black;
-            border-collapse: collapse;
-            padding: 15px;
-            background-color: rgb(20, 31, 31, .3);
-            table-layout: fixed;
+            font-size: 30px;
+            text-align: center;
+            height: 200px;
+            width: 325px;
+            margin: auto;
         }
     </style>
 
@@ -41,6 +41,7 @@
             var vari = parseInt(vari)
             var answer = gal / (100 + vari);
             answer = answer * 100;
+            answer = Math.round(answer);
             document.getElementById("answer").innerHTML = answer;
         }
     </script>
@@ -48,28 +49,26 @@
 
 <body>
 
-    <table id="maintable">
-        <tr>
-            <th>
-                <form>
-                    gallons<br>
-                    <input type="text" id="gallons">
-                    <br>
-                </form>
-            </th>
-            <th>
-                <form>
-                    varient<br>
-                    <input type="text" id="varients">
-                    <br>
-                </form>
-            </th>
-            <th>
-                <h2 id="answer"> answer (100%) </h2>
-            </th>
-        </tr>
+    <div class="flex-container">
+        <div>
+            <form>
+                gallons<br>
+                <input type="text" id="gallons">
+                <br>
+            </form>
+        </div>
+        <div>
+            <form>
+                varient<br>
+                <input type="text" id="varients">
+                <br>
+            </form>
+        </div>
+        <div>
+            <h2 id="answer"> 100% </h2>
+        </div>
+    </div>
 
-    </table>
     <br>
     <button id="ansButton" onclick="myFunction()">
         click me!
