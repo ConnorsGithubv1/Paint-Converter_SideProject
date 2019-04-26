@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>converter</title>
+    <style>
+        body {
+            background-image: url("background.jpg");
+            background-size: cover;
+            text-align: center;
+            padding: 450px;
+        }
+        
+        #maintable {
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+            color: white;
+        }
+        
+        table,
+        th,
+        tr,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 15px;
+            background-color: rgb(20, 31, 31, .3);
+            table-layout: fixed;
+        }
+    </style>
+
+    <script>
+        function myFunction() {
+            var gal = document.getElementById("gallons").value;
+            var vari = document.getElementById("varients").value;
+            var gal = parseInt(gal);
+            var vari = parseInt(vari)
+            var answer = gal / (100 + vari);
+            answer = answer * 100;
+            document.getElementById("answer").innerHTML = answer;
+        }
+    </script>
+</head>
+
+<body>
+
+    <table id="maintable">
+        <tr>
+            <th>
+                <form>
+                    gallons<br>
+                    <input type="text" id="gallons">
+                    <br>
+                </form>
+            </th>
+            <th>
+                <form>
+                    varient<br>
+                    <input type="text" id="varients">
+                    <br>
+                </form>
+            </th>
+            <th>
+                <h2 id="answer"> answer (100%) </h2>
+            </th>
+        </tr>
+
+    </table>
+    <br>
+    <button id="ansButton" onclick="myFunction()">
+        click me!
+    </button>
+
+</body>
+
+</html>
